@@ -1,0 +1,313 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;  
+}
+
+body {
+	background-color: #262626; 
+	color: white; 
+	font-family: Roboto;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(26, 26, 26, 0.8);    
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+header a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+header a:hover {
+    color: #ffcc00;
+}
+
+header a:active {
+    color: #ffcc00;
+}
+.container {
+    margin: 35px;
+}
+
+
+.container section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: flex-start;
+    margin: 40px;
+}
+
+.doner, .chicen-doner {
+    height: 250px;
+    width: 300px;
+    background-color: #4f4f4f;
+    border-radius: 25px;
+    text-align: center;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    cursor: pointer;
+}
+
+.doner:hover, .chicen-doner:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    background-color: #5a5a5a;
+}
+
+.container img {
+    height: 180px;
+    width: 100%;
+    border-radius: 25px 25px 0 0;
+    object-fit: cover;
+}
+
+.doner p, .chicen-doner p {
+    line-height: 1.4;
+}
+
+.price {
+    color: #ffd642;
+    font-weight: bold;
+}
+.container h1,h2{
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+footer {
+    background-color: #1a1a1a;
+    color: #888;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid grey;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.socials a {
+    color: #cae8fc;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.socials a:hover {
+    text-decoration: underline;
+}*/
+/* 1. ПОДКЛЮЧЕНИЕ ШРИФТОВ И ОБЩИЕ СТИЛИ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;  
+}
+
+html {
+    scroll-behavior: smooth; /* Плавная прокрутка при нажатии на ссылки в меню */
+}
+
+body {
+    background-color: #262626; 
+    color: white; 
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+/* 2. ШАПКА САЙТА (HEADER) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(26, 26, 26, 0.8);    
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+header a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header a:hover, header a:active {
+    color: #ffcc00;
+}
+
+/* 3. КОНТЕНТ (МЕНЮ) */
+.container {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Центрируем всё содержимое на больших экранах */
+}
+
+.container h1, .container h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #444;
+    margin-bottom: 30px;
+}
+
+/* Сетка карточек */
+.container section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center; /* Центрируем карточки в ряду */
+    margin-bottom: 50px;
+}
+
+/* Карточка товара */
+.doner, .chicen-doner {
+    width: 280px;
+    background-color: #4f4f4f;
+    border-radius: 25px;
+    text-align: center;
+    padding-bottom: 15px;
+    overflow: hidden; /* Чтобы картинка не вылезала за скругление углов */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    cursor: pointer;
+}
+
+.doner:hover, .chicen-doner:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    background-color: #5a5a5a;
+}
+
+.container img {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    border-bottom: 2px solid #333;
+}
+
+.doner p, .chicen-doner p {
+    margin: 10px 5px;
+    font-size: 16px;
+}
+
+.price {
+    color: #ffd642;
+    font-weight: bold;
+    font-size: 18px !important;
+}
+
+/* 4. ПОДВАЛ (FOOTER) */
+footer {
+    background-color: #1a1a1a;
+    color: #888;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid #444;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.socials a {
+    color: #cae8fc;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+/* 5. КНОПКА WHATSAPP */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 2000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
+
+/* 6. АДАПТАЦИЯ ПОД МОБИЛЬНЫЕ УСТРОЙСТВА */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        flex-direction: column; /* На очень узких экранах лого будет над меню */
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    header a {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 20px 10px;
+    }
+
+    .container section {
+        gap: 20px;
+    }
+
+    .doner, .chicen-doner {
+        width: 100%; /* Карточка на всю ширину экрана */
+        max-width: 320px; /* Чтобы не была слишком широкой на планшетах */
+    }
+
+    .whatsapp-button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
