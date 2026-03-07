@@ -4,6 +4,7 @@
          <title>Doner</title>
          <link rel="stylesheet" type="text/css" href="doner.css">
          <link rel="website icon" type="webp" href=".webp">
+         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
          <meta charset="UTF-8">
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -16,7 +17,7 @@
           <nav class="nav-links"> 
                <a href="#">Меню</a>
                <a href="#">Сеты</a>
-               <a href="#">О нас</a>
+               <a href="#">Корзина</a>
           </nav>
      </header>
 
@@ -25,81 +26,93 @@
           <hr>
           <h2>Донеры</h2> 
           <section>
-               <div class="doner">
+               <div class="doner" data-aos="fade-up" data-aos-delay="100">
                     <img src="chicenburger.jpeg">
                     <p>Донер куринный стандарт</p>
                     <p class="price">1390 тг</p>
+                    <button class="buy-btn">Добавить в корзину</button>
                </div>
 
-               <div class="chicen-doner">
+               <div class="chicen-doner" data-aos="fade-up" data-aos-delay="200">
                     <img src="chicenburger.jpeg">
                     <p>Донер куринный 1,5</p>
                     <p class="price">1690 тг</p>
+                    <button class="buy-btn">Добавить в корзину</button>
                </div>
 
-               <div class="doner">
+               <div class="doner" data-aos="fade-up" data-aos-delay="300">
                     <img src="cowdoner.jpg">
                     <p>Донер говяжий стандарт</p>
                     <p class="price">1590 тг</p>
+                    <button class="buy-btn">Добавить в корзину</button>
                </div>
 
-               <div class="chicen-doner">
+               <div class="chicen-doner" data-aos="fade-up" data-aos-delay="400">
                     <img src="cowdoner.jpg">
                     <p>Донер говяжий 1,5</p>
                     <p class="price">1890 тг</p>
+                    <button class="buy-btn">Добавить в корзину</button>
                </div>
           </section>
           <h2>Бургеры</h2>
           <section>
-               <div class="doner">
+               <div class="doner" data-aos="fade-up" data-aos-delay="500">
                     <img src="gamburger.jpg">
                     <p>Гамбургер</p>
                     <p class="price">990 тг</p>
+                    <button class="buy-btn">Добавить в корзину</button>
                </div>
 
-               <div class="doner">
+               <div class="doner" data-aos="fade-up" data-aos-delay="600">
                     <img src="2gamburger.jpg">
-                    <p>Двоиной Гамбургер</p>
+                    <p>Двойной Гамбургер</p>
                     <p class="price">1290 тг</p>
+                    <button class="buy-btn">Добавить в корзину</button>
                </div>
 
-               <div class="doner">
+               <div class="doner" data-aos="fade-up" data-aos-delay="700">
                     <img src="чизбургер..jpg.jpg">
                     <p>Чизбургер</p>
                     <p class="price">990 тг</p>
+                    <button class="buy-btn">Добавить в корзину</button>
                </div>
 
-               <div class="doner">
+               <div class="doner" data-aos="fade-up" data-aos-delay="800">
                     <img src="чизбургер..jpg.jpg.jpg">
-                    <p>Двоиной Чизбургер</p>
+                    <p>Двойной Чизбургер</p>
                     <p class="price">1490 тг</p>
+                    <button class="buy-btn">Добавить в корзину</button>
                </div>
           </section>
 
           <h2>Напитки</h2>
           <section>
-               <div class="doner">
+               <div class="doner" data-aos="fade-up" data-aos-delay="900">
                     <img src="колы.jpg">
                     <p>Кока Кола</p>
                     <p class="price">550 тг</p>
+                    <button class="buy-btn">Добавить в корзину</button>
                </div>
 
-               <div class="doner">
+               <div class="doner" data-aos="fade-up" data-aos-delay="1000">
                     <img src="махичай.jpg">
                     <p>Макси Чай</p>
                     <p class="price">450 тг</p>
+                    <button class="buy-btn">Добавить в корзину</button>
                </div>
 
-               <div class="doner">
+               <div class="doner" data-aos="fade-up" data-aos-delay="1100">
                     <img src="фантф.jpg">
                     <p>Фанта</p>
                     <p class="price">550 тг</p>
+                    <button class="buy-btn">Добавить в корзину</button>
                </div>
 
-               <div class="doner">
+               <div class="doner" data-aos="fade-up" data-aos-delay="1200">
                     <img src="фюсти.jpg">
                     <p>Фюсти</p>
                     <p class="price">450 тг</p>
+                    <button class="buy-btn">Добавить в корзину</button>
                </div>
           </section>
      </div>
@@ -114,5 +127,9 @@
         </div>
     </div>
 </footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
     </body>
 </html>
