@@ -118,7 +118,7 @@ footer {
 .socials a:hover {
     text-decoration: underline;
 }*/
-/* 1. ПОДКЛЮЧЕНИЕ ШРИФТОВ И ОБЩИЕ СТИЛИ */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
 
 * { 
@@ -128,7 +128,7 @@ footer {
 }
 
 html {
-    scroll-behavior: smooth; /* Плавная прокрутка при нажатии на ссылки в меню */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -138,7 +138,6 @@ body {
     line-height: 1.6;
 }
 
-/* 2. ШАПКА САЙТА (HEADER) */
 header {
     display: flex;
     justify-content: space-between;
@@ -170,11 +169,10 @@ header a:hover, header a:active {
     color: #ffcc00;
 }
 
-/* 3. КОНТЕНТ (МЕНЮ) */
 .container {
     padding: 40px 20px;
     max-width: 1200px;
-    margin: 0 auto; /* Центрируем всё содержимое на больших экранах */
+    margin: 0 auto;
 }
 
 .container h1, .container h2 {
@@ -189,23 +187,21 @@ hr {
     margin-bottom: 30px;
 }
 
-/* Сетка карточек */
 .container section {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    justify-content: center; /* Центрируем карточки в ряду */
+    justify-content: center;
     margin-bottom: 50px;
 }
 
-/* Карточка товара */
 .doner, .chicen-doner {
     width: 280px;
     background-color: #4f4f4f;
     border-radius: 25px;
     text-align: center;
     padding-bottom: 15px;
-    overflow: hidden; /* Чтобы картинка не вылезала за скругление углов */
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
     cursor: pointer;
 }
@@ -277,11 +273,10 @@ footer {
     transform: scale(1.1);
 }
 
-/* 6. АДАПТАЦИЯ ПОД МОБИЛЬНЫЕ УСТРОЙСТВА */
 @media (max-width: 768px) {
     header {
         padding: 15px 20px;
-        flex-direction: column; /* На очень узких экранах лого будет над меню */
+        flex-direction: column;
         gap: 10px;
     }
 
@@ -302,12 +297,35 @@ footer {
     }
 
     .doner, .chicen-doner {
-        width: 100%; /* Карточка на всю ширину экрана */
-        max-width: 320px; /* Чтобы не была слишком широкой на планшетах */
+        width: 100%;
+        max-width: 320px;
     }
 
     .whatsapp-button {
         padding: 10px 15px;
         font-size: 14px;
     }
+}
+.buy-btn {
+    background-color: #ffd642;
+    color: #262626;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    width: 80%; 
+}
+
+.buy-btn:hover {
+    background-color: #ffcc00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 214, 66, 0.3);
+}
+
+.buy-btn:active {
+    transform: translateY(0);
 }
