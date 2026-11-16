@@ -3,26 +3,25 @@ const WA_PHONE = "77000000000"; // ← номер WhatsApp в формате 7XX
 const STORAGE_KEY = "doner-cart-v1";
 
 /* ===== Товары (цены сохранены) =====
-   Картинки: положите файлы рядом с index.html под этими именами.
-   Пока файла нет — показывается эмодзи-заглушка. */
+   Вместо фото используются эмодзи-заглушки (поле emoji). */
 const PRODUCTS = [
-  {id:"d1",cat:"doner",name:"Донер куриный стандарт",price:1390,img:"chicken-doner.jpg",emoji:"🌯"},
-  {id:"d2",cat:"doner",name:"Донер куриный 1,5",price:1690,img:"chicken-doner.jpg",emoji:"🌯"},
-  {id:"d3",cat:"doner",name:"Донер говяжий стандарт",price:1590,img:"cowdoner.jpg",emoji:"🌯"},
-  {id:"d4",cat:"doner",name:"Донер говяжий 1,5",price:1890,img:"cowdoner.jpg",emoji:"🌯"},
-  {id:"b1",cat:"burger",name:"Гамбургер",price:990,img:"hamburger.jpg",emoji:"🍔"},
-  {id:"b2",cat:"burger",name:"Двойной Гамбургер",price:1290,img:"hamburger-double.jpg",emoji:"🍔"},
-  {id:"b3",cat:"burger",name:"Чизбургер",price:990,img:"cheeseburger.jpg",emoji:"🍔"},
-  {id:"b4",cat:"burger",name:"Двойной Чизбургер",price:1490,img:"cheeseburger-double.jpg",emoji:"🍔"},
-  {id:"k1",cat:"drink",name:"Кока Кола",price:550,img:"cola.jpg",emoji:"🥤"},
-  {id:"k2",cat:"drink",name:"Макси Чай",price:450,img:"maxi-tea.jpg",emoji:"🧋"},
-  {id:"k3",cat:"drink",name:"Фанта",price:550,img:"fanta.jpg",emoji:"🥤"},
-  {id:"k4",cat:"drink",name:"Фюсти",price:450,img:"fusti.jpg",emoji:"🥤"},
+  {id:"d1",cat:"doner",name:"Донер куриный стандарт",price:1390,emoji:"🌯"},
+  {id:"d2",cat:"doner",name:"Донер куриный 1,5",price:1690,emoji:"🌯"},
+  {id:"d3",cat:"doner",name:"Донер говяжий стандарт",price:1590,emoji:"🌯"},
+  {id:"d4",cat:"doner",name:"Донер говяжий 1,5",price:1890,emoji:"🌯"},
+  {id:"b1",cat:"burger",name:"Гамбургер",price:990,emoji:"🍔"},
+  {id:"b2",cat:"burger",name:"Двойной Гамбургер",price:1290,emoji:"🍔"},
+  {id:"b3",cat:"burger",name:"Чизбургер",price:990,emoji:"🍔"},
+  {id:"b4",cat:"burger",name:"Двойной Чизбургер",price:1490,emoji:"🍔"},
+  {id:"k1",cat:"drink",name:"Кока Кола",price:550,emoji:"🥤"},
+  {id:"k2",cat:"drink",name:"Макси Чай",price:450,emoji:"🧋"},
+  {id:"k3",cat:"drink",name:"Фанта",price:550,emoji:"🥤"},
+  {id:"k4",cat:"drink",name:"Фюсти",price:450,emoji:"🥤"},
   /* Сеты: price — цена сета, old — сумма по отдельности */
-  {id:"s1",cat:"sets",name:"Сет «Классика»",desc:"Куриный донер + Кока Кола",price:1790,old:1940,img:"chicken-doner.jpg",emoji:"🌯",tag:"Хит"},
-  {id:"s2",cat:"sets",name:"Сет «Говяжий»",desc:"Говяжий донер 1,5 + Фанта",price:2190,old:2440,img:"cowdoner.jpg",emoji:"🌯"},
-  {id:"s3",cat:"sets",name:"Сет «Бургер-комбо»",desc:"Двойной чизбургер + Кока Кола",price:1890,old:2040,img:"cheeseburger-double.jpg",emoji:"🍔"},
-  {id:"s4",cat:"sets",name:"Сет «На двоих»",desc:"Куриный донер 1,5 + Гамбургер + Кока Кола + Макси Чай",price:3290,old:3680,img:"hamburger.jpg",emoji:"🍽️",tag:"Выгодно"}
+  {id:"s1",cat:"sets",name:"Сет «Классика»",desc:"Куриный донер + Кока Кола",price:1790,old:1940,emoji:"🌯",tag:"Хит"},
+  {id:"s2",cat:"sets",name:"Сет «Говяжий»",desc:"Говяжий донер 1,5 + Фанта",price:2190,old:2440,emoji:"🌯"},
+  {id:"s3",cat:"sets",name:"Сет «Бургер-комбо»",desc:"Двойной чизбургер + Кока Кола",price:1890,old:2040,emoji:"🍔"},
+  {id:"s4",cat:"sets",name:"Сет «На двоих»",desc:"Куриный донер 1,5 + Гамбургер + Кока Кола + Макси Чай",price:3290,old:3680,emoji:"🍽️",tag:"Выгодно"}
 ];
 
 /* ===== Утилиты ===== */
@@ -30,7 +29,7 @@ const $ = (s, el=document) => el.querySelector(s);
 const fmt = n => n.toLocaleString("ru-RU") + " тг";
 const byId = id => PRODUCTS.find(p => p.id === id);
 const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const pic = p => `<div class="ph" data-emoji="${p.emoji}"><img src="${p.img}" alt="${esc(p.name)}" loading="lazy" onerror="this.remove()"></div>`;
+const pic = p => `<div class="ph" data-emoji="${p.emoji}" role="img" aria-label="${esc(p.name)}"></div>`;
 
 /* ===== Состояние корзины (localStorage) ===== */
 let cart = {};
@@ -91,7 +90,7 @@ function toast(msg){
   $("#toastText").textContent = msg;
   $("#toast").classList.add("show");
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => $("#toast").classList.remove("show"), 2000);
+  toastTimer = setTimeout(() => $("#toast").classList.remove("show"), 4000); // исчезает через 4 секунды
 }
 
 function addToCart(id, btn){
